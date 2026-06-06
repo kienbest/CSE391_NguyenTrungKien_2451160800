@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Phiếu Mượn Sách</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>QUẢN LÝ PHIẾU MƯỢN SÁCH</h1>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Tổng Phiếu</h3>
+            <p id="total">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Đang Mượn</h3>
+            <p id="borrowing">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Đã Trả</h3>
+            <p id="returned">0</p>
+        </div>
+    </div>
+
+    <button class="add-btn" onclick="openModal()">
+        Thêm Phiếu Mượn
+    </button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mã Phiếu</th>
+                <th>Người Mượn</th>
+                <th>Mã Sách</th>
+                <th>Thể Loại</th>
+                <th>Trạng Thái</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+
+        <tbody id="borrowTable">
+
+        </tbody>
+    </table>
+
+</div>
+
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Thông Tin Phiếu Mượn</h2>
+
+        <form id="borrowForm">
+
+            <input type="text" id="borrowId" placeholder="Mã phiếu">
+            <div class="error" id="errBorrowId"></div>
+
+            <input type="text" id="borrowerName" placeholder="Họ tên">
+            <div class="error" id="errName"></div>
+
+            <input type="text" id="bookId" placeholder="Mã sách">
+            <div class="error" id="errBook"></div>
+
+            <select id="category">
+                <option value="">Chọn thể loại</option>
+                <option>CNTT</option>
+                <option>Kinh tế</option>
+                <option>Ngoại ngữ</option>
+                <option>Kỹ năng</option>
+            </select>
+
+            <input type="date" id="borrowDate">
+
+            <input type="date" id="dueDate">
+
+            <input type="text" id="phone" placeholder="Số điện thoại">
+
+            <input type="text" id="email" placeholder="Email">
+
+            <select id="status">
+                <option value="">Chọn trạng thái</option>
+                <option>Đang mượn</option>
+                <option>Đã trả</option>
+            </select>
+
+            <textarea id="note" placeholder="Ghi chú"></textarea>
+
+            <button type="submit">
+                Lưu
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
